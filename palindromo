@@ -1,0 +1,31 @@
+const assert = require("assert");
+
+function isPalindrome(str) {
+    
+    str = str.toLowerCase();
+        return str == str.split("").reverse().join("");
+       
+    }
+
+    const arrTrue =["rotator", "bob", "madam", "mAlAyAlam", "1", "Able was I, ere I saw Elba", "Madam I'm Adam", "Step on no pets",
+    "Top spot!", "02/02/2020", "Socorram-me subi no ônibus em marrocos"];
+
+    const arrFalse =["xyz", "elephant", "Country", "Top . post!", "Wonderful-fool", "Wild imagination!"];
+
+
+    describe('Função de teste palíndromo', function() {
+    
+        it("verifica se as palavras no array são palíndromos", function() {
+            arrTrue.forEach(function(arrTrue) {
+                assert.equal(isPalindrome(arrTrue.toLowerCase().replace(/[^a-z0-9]/g, '')), true);
+            });
+        });
+
+        it("verifica se as palavras no array são palíndromos", function() {
+            arrFalse.forEach(function(arrFalse) {
+                assert.equal(isPalindrome(arrFalse.toLowerCase().replace(/[^a-z0-9]/g, '')), false);
+            });
+        });
+      
+    });
+
